@@ -68,3 +68,11 @@ usermap.set("aditya",{name:"aditya",age:21})
 usermap.set("kali",{name:"kishan",age:21})
 let userfrommap=usermap.get("aditya")
 console.log(userfrommap?.name)
+//Exclude<T, U> is a built-in TypeScript utility type that removes from T all types that are assignable to U.
+type eventtype='mouse'|'scroll'|'click'
+type excludeEventType=Exclude<eventtype,'scroll'>
+function exclude(a:excludeEventType)
+{
+    console.log(`event ${a}`)
+}
+// exclude('scroll')
