@@ -42,13 +42,29 @@ updateoptional({name:"aditya"})
 // Once a value is assigned (usually in the constructor or during initialization), 
 // it cannot be changed.
 type user2={
-    readonly name:string ,
-    readonly age:number
+     name:string ,
+     age:number
 }
 
-let us:user2={
+let us:Readonly<user2>={
     name:"aditya",
     age:21
 }
 
 // us.name="asd";
+//........................................................................................................
+
+// Record: A TypeScript utility type for storing fixed key-value pairs with known key types.
+type  userrecord =Record<string, {name:string,age:number}>
+
+const recoredd:userrecord={
+    "aditya":{name:"aditya",age:21},
+    "kali":{name:"kishan",age:21}
+}
+// Map: A JavaScript collection for storing dynamic key-value pairs, 
+// where keys can be of any type (including objects).
+const usermap=new Map()
+usermap.set("aditya",{name:"aditya",age:21})
+usermap.set("kali",{name:"kishan",age:21})
+let userfrommap=usermap.get("aditya")
+console.log(userfrommap?.name)
